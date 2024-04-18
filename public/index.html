@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop File Upload</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="icon">FileShare</div>
+            <nav>
+                <a href="./about.html">About</a>
+            </nav>
+        </header>
+        <label for="file-input" id="drop-area" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+            <img src="./icons/upload-1.svg">
+            <p>Drag & Drop files here</p>
+            <input type="file" id="file-input" onchange="handleFileInput(this.files)" multiple>
+            <a href="./download.html"><button class="download-btn">Download files</button></a>
+        </label>
+    </div>
+    <footer>
+        <p>&copy; 2023 FileShare. All rights reserved.</p>
+    </footer>
+    <div class="upload-wrapper hidden">
+        <div class="upload-dialog">
+            <div class="upload-header">
+                <h1>Upload file</h1>
+                <span class="cut">&cross;</span>
+            </div>
+            <input type="text" class="custom-name" placeholder="favorite-link">
+            <input type="password" class="password-input" placeholder="Password">
+            <button class="upload-btn">Upload</button>
+            <div class="upload-box hidden">
+                <img src="./icons/upload-2.svg">
+                <div class="upload-status">
+                    <div class="upload-data">15563/6236</div>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="uploaded-box">
+                <div class="uploaded-link">
+                    https://google.com/hghg
+                </div>
+                <button class="copy-btn">Copy</button>
+            </div>
+            <div class="error-box hidden">
+                Uploading Error ...
+            </div>
+        </div>
+    </div>
+
+<script src="./main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop File Upload</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="icon">FileShare</div>
+            <nav>
+                <a href="./about.html">About</a>
+            </nav>
+        </header>
+        <div class="download-area">
+            <div class="dialog download-dialog">
+                <h1 class="dialog-header">Download file</h1>
+                <div class="input-box">
+                    <input type="text" class="custom-name" placeholder="Enter path..">
+                    <input type="password" class="password" placeholder="Enter password">
+                    <button class="download-btn btn">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 FileShare. All rights reserved.</p>
+    </footer>
+    <script>
+        const downloadBtn = document.querySelector(".download-btn")
+        const customName = document.querySelector(".custom-name")
+
+        function downloadFile() {
+            console.log(customName.value)
+            location.href = customName.value
+        }
+
+
+        downloadBtn.addEventListener("click", downloadFile)
+    </script>
+</body>
+</html>
